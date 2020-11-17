@@ -379,7 +379,6 @@ buttonr:hover {
   padding: 0;
 }
 
-
 .mentoring-grid-item {
   flex-grow: 1 0 0; 
   padding: 10px;
@@ -390,45 +389,32 @@ buttonr:hover {
 .mentoring-grid-card {
   height: 100%;
   width: 100%;
-  background-color: #88398a;
+  padding: 0;
+  border: 1px solid #ddd;
 }
 
 .mentorimg {
-  height: 93%;
-  width: 48%;
+  height: 100%;
+  width: 50%;
   float: left;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }  
 
-.mentoring-topbar {
-  padding: 2px;
-  margin: 2px;
-  color: #fff;
-  width: 100%;
-  float: top;
-  background-color: #88398a;
-}
 
-.mentoring-col-right {
-  float: left;
+.mentoring-grid-right {
+  height: 70%;
   width: 50%;
-}
-
-.mentoring-col-left {
   float: left;
-  width: 48%;
 }
 
 .mentoring-grid-statement {
-  margin-left: 12px;
-  padding: 1.5%;
-  background-color: #fff;
-  width: 48%;
-  float: left;
-  height: 90%;
-  border: 10px double #ddd;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: left;
+  margin: 0 auto;
 }
 
 .mentoring-grid-statement p {
@@ -436,17 +422,33 @@ buttonr:hover {
   color: #222;
 }
 
+.mentoring-grid-attribution{
+  margin: 10px;
+  width: 95%;
+  height: 25%; 
+  position: absolute;
+  bottom: 0;
+  text-align: justify;
+}
 
-.mentoring-grid-statement h1 {
+.mentoring-grid-attribution h1 {
   font-size: 20px;
   font-weight: 400;
+  letter-spacing: 1.4px;
 }
 
-.mentoring-grid-statement h2 {
+.mentoring-grid-attribution h2 {
   font-size: 14px;
+  font-weight: 200;
 }
 
-
+.mentoring-grid-attribution h3 {
+  background: transparent url("/image/logo.png" ) no-repeat;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #777;
+  line-height: .3;
+}
 
 @media only screen and (max-width: 650px) {
   .mentoring-grid-item {
