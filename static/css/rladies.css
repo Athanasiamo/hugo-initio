@@ -22,7 +22,7 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Helvetica Neue", "Open Sans", sans-serif; 
+  font-family: "Helvetica Neue", "Lato", "Open Sans", sans-serif; 
   color: #88398a;
   font-weight: 450;
 }
@@ -36,13 +36,13 @@ a:hover, a:focus {
 }
 
 .navbar{
-  font-family: "Helvetica Neue WGL", "Open Sans", sans-serif; 
+  font-family: "Helvetica Neue WGL", "Lato", "Open Sans", sans-serif; 
   color: #88398a;
   font-weight: 500;
 }
 
 .navbar-collapse {
-  font-family: "Helvetica Neue WGL", "Open Sans", sans-serif; 
+  font-family: "Helvetica Neue WGL", "Lato", "Open Sans", sans-serif; 
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -61,7 +61,7 @@ a:hover, a:focus {
 }
 
 .entry-header .entry-meta .tagline{
-  font-family: "Helvetica Neue", "Open Sans", sans-serif; 
+  font-family: "Helvetica Neue","Lato",  "Open Sans", sans-serif; 
   color: #fff;
 }
 
@@ -71,13 +71,13 @@ a:hover, a:focus {
 }
 
 .hero .title {
-  font-family: "Helvetica CE 35 Thin", "Open Sans", sans-serif; 
+  font-family: "Helvetica CE 35 Thin","Lato",  "Open Sans", sans-serif; 
   color: #fff;
   font-size: 150%;
 }
 
 .hero  .tagline {
-  font-family: "Helvetica CE 35 Thin", "Open Sans", sans-serif; 
+  font-family: "Helvetica CE 35 Thin", "Lato", "Open Sans", sans-serif; 
   color: #fff;
 }
 
@@ -208,7 +208,6 @@ buttonr:hover {
   justify-content: center;
   width: 100%;
   list-style-type: none;
-  overflow: wrap;
   margin: 0;
   padding: 0;
 }
@@ -402,19 +401,18 @@ buttonr:hover {
   background-position: center;
 }  
 
-
 .mentoring-grid-right {
-  height: 70%;
+  height: 100%;
   width: 50%;
   float: left;
+  padding: 3%;
+  position: relative;
 }
 
 .mentoring-grid-statement {
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: 70%;
   text-align: left;
-  margin: 0 auto;
 }
 
 .mentoring-grid-statement p {
@@ -423,12 +421,12 @@ buttonr:hover {
 }
 
 .mentoring-grid-attribution{
-  margin: 10px;
-  width: 95%;
-  height: 25%; 
+  padding: 3%;
+  width: 88%;
+  height: 30%; 
   position: absolute;
-  bottom: 0;
-  text-align: justify;
+  bottom: 3%;
+  text-align: right;
 }
 
 .mentoring-grid-attribution h1 {
@@ -443,7 +441,7 @@ buttonr:hover {
 }
 
 .mentoring-grid-attribution h3 {
-  background: transparent url("/image/logo.png" ) no-repeat;
+  padding-left: 20px;
   font-size: 14px;
   letter-spacing: 1px;
   color: #777;
@@ -453,7 +451,7 @@ buttonr:hover {
 @media only screen and (max-width: 650px) {
   .mentoring-grid-item {
     width: 450px; /* golden ratio */
-    height: calc(450px * 1.6);
+    height: calc(450px * 1.4);
     position: relative;
   }
   
@@ -463,20 +461,32 @@ buttonr:hover {
   
   .mentorimg{
     position: absolute;
-    top: 22px;
     float: none;
-    height: 50%;
+    height: 60%;
     width: 100%;
   }
   
-  .mentoring-grid-statement {
-    position: absolute;
-    top: 390px;
-
-    padding-top: 3%;
-    width: 95%;
-    float: none;
+  .mentoring-grid-right {
     height: 40%;
+    width: 100%;
+    top: 60%;
+    float: none;
+    position: absolute;
+  }
+  
+  .mentoring-grid-statement {
+    width: 100%;
+    height: 64%;
+  }
+  
+  .mentoring-grid-attribution {
+    height: 36%;
+    width: 94%;
+    bottom: 2%;
+    float: none;
+    position: absolute;
+    text-align: right;
+    padding: 0;
   }
   
 }
