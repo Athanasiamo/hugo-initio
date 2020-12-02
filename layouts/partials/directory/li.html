@@ -1,6 +1,6 @@
 <li class="directory-grid-item">
   <div class="directory-grid-main">
-    <div class="imgdiv" style="background-image: url(img/{{ .photo_url }});" ></div>
+    <div class="imgdiv" style='background-image: url({{ .photo_url | default "/images/placeholder_user.png"}});' ></div>
       <h1><b>{{ .name }}</b></h1> 
       <h2>{{with .honorific }}{{ . }}{{ end }}&emsp;{{with .pronouns }}{{ . }}{{ end }}</h2>
       {{ with .social_media }}
@@ -16,35 +16,12 @@
         <i>{{ .title }}</i>{{ with .organization }}&nbsp; - &nbsp;{{ . }}{{ end }}
     <br><br>
     <p>
-      <b>Contact through:</b> {{ delimit .contact_method ", " }}</br>
+      <b>Contact through:</b> {{ delimit .contact_method ", " | default "Not disclosed" }}<br>
     </p>
-    {{ with .interests }}
-    <p>
-      <b><i class="fas fa-tag" style = "font-size: 15px;"></i>&nbsp;</b>
-       {{ delimit . ", " }}
-    </p>
-    {{ end }}
-    {{ with .r_groups }}
-        <p>
-          <b><i class="fas fa-users" style = "font-size: 15px;"></i>
-          &nbsp;</b>
-          {{ delimit . ", " }}
-        </p>
-    {{ end }}
-    {{ with .r_packages }}
-      <p>
-        <b><i class="fas fa-cube" style = "font-size: 15px;"></i>
-        &nbsp;</b>
-            {{ delimit . ", " }}
-      </p>
-    {{ end }}
-    <br>
-    {{ with .shiny_apps }}
-      <p>
-        <b><i class="fab fa-stripe-s" style="font-size: 15px;"></i>
-        &nbsp;</b>
-            {{ delimit . ", " }}
-      </p>
+    {{ with .activities }}
+        {{ range . }}
+          {{ partial "some.html" . }}
+        {{ end }}
     {{ end }}
    </div>
 </li>

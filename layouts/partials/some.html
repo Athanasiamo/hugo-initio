@@ -58,3 +58,35 @@
     <i class="fab fa-orcid"></i>
   </a>
 {{end}}
+
+{{ with .interests }}
+  <p>
+    <b><i class="fas fa-tag" style = "font-size: 15px;"></i>&nbsp;</b>
+     {{ delimit . ", " }}
+  </p>
+{{ end }}
+    
+    
+{{ with .r_groups }}
+    <p>
+      <b><i class="fas fa-users" style = "font-size: 15px;"></i>
+      &nbsp;</b>
+      {{ delimit . ", " }}
+    </p>
+{{ end }}
+    
+{{ with .r_packages}}
+  <p>
+    <b><i class="fas fa-cube" style = "font-size: 15px;"></i>
+    &nbsp;</b>
+        {{ delimit . ", " }}
+  </p>
+{{ end }}
+
+{{ with .shiny_apps }}
+  <p>
+    <b><i class="fab fa-stripe-s" style="font-size: 15px;"></i>
+    &nbsp;</b>
+        {{ delimit . ", " }}
+  </p>
+{{ end }}
