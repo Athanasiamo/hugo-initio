@@ -2,14 +2,12 @@
   <div class="directory-grid-main">
     <div class="imgdiv" style='background-image: url({{ .photo_url | default "/images/placeholder_user.png"}});' ></div>
       <h1><b>{{ .name }}</b></h1> 
-      <h2>{{with .honorific }}{{ . }}{{ end }}&emsp;{{with .pronouns }}{{ . }}{{ end }}</h2>
-      {{ with .social_media }}
+      {{with .honorific }}<h2>{{ . }}{{ end }}&emsp;{{with .pronouns }}{{ . }}</h2>{{ end }}
       <h3>
-        {{ range . }}
+        {{ range .social_media }}
           {{ partial "some.html" . }}
         {{ end }}
       </h3>
-      {{ end }}
       </div>
       <div class="directory-grid-desc">
       <p>
@@ -18,10 +16,14 @@
     <p>
       <b>Contact through:</b> {{ delimit .contact_method ", " | default "Not disclosed" }}<br>
     </p>
-    {{ with .activities }}
-        {{ range . }}
-          {{ partial "some.html" . }}
-        {{ end }}
+    <p>
+      {{ with .interests }}
+        <b><i class="fas fa-tag" style = "font-size: 15px;"></i>&nbsp;</b>
+        {{ delimit . ", " }}
+      {{ end }}
+    </p>
+    {{ range .activities }}
+        {{ partial "some.html" . }}
     {{ end }}
    </div>
 </li>

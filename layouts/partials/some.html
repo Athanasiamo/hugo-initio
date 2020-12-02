@@ -23,6 +23,12 @@
   </a>
 {{end}}
 
+{{ with .tiktok }}
+  <a href="https://www.tiktok.com/{{ . }}" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+{{end}}
+
 {{ with .periscope }}
   <a href="https://www.periscope.tv/{{ . }}" target="_blank">
     <i class="fab fa-periscope"></i>
@@ -59,34 +65,23 @@
   </a>
 {{end}}
 
-{{ with .interests }}
+{{ with .r_groups }}
   <p>
-    <b><i class="fas fa-tag" style = "font-size: 15px;"></i>&nbsp;</b>
-     {{ delimit . ", " }}
+    <b><i class="fas fa-users" style = "font-size: 15px;"></i>&nbsp;</b>
+    {{ delimit . ", " }}
   </p>
 {{ end }}
     
-    
-{{ with .r_groups }}
-    <p>
-      <b><i class="fas fa-users" style = "font-size: 15px;"></i>
-      &nbsp;</b>
-      {{ delimit . ", " }}
-    </p>
-{{ end }}
-    
-{{ with .r_packages}}
+{{ with .r_packages }}
   <p>
-    <b><i class="fas fa-cube" style = "font-size: 15px;"></i>
-    &nbsp;</b>
-        {{ delimit . ", " }}
+    <b><i class="fas fa-cube" style = "font-size: 15px;"></i>&nbsp;</b>
+    {{ delimit . ", " }}
   </p>
 {{ end }}
 
 {{ with .shiny_apps }}
   <p>
-    <b><i class="fab fa-stripe-s" style="font-size: 15px;"></i>
-    &nbsp;</b>
-        {{ delimit . ", " }}
+    <b><i class="fab fa-stripe-s" style="font-size: 15px;"></i>&nbsp;</b>
+    {{ delimit . ", " }}
   </p>
 {{ end }}

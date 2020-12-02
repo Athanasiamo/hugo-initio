@@ -17,12 +17,21 @@
 				
         <div class="flex-container">
           <ul class="directory-grid">
-            {{ $url := "https://raw.githubusercontent.com/rladies/directory/master/directory/rladies_directory.json?token=" }}
-            {{ $pat := getenv "DIRECTORY_PAT" }}
-            {{ $directory := getJSON $url $pat }}
-            {{ range $directory }}
-              {{ partial "directory/li.html" . }}
+            {{ if eq .Hugo.Environment "production" }}
+              {{ $url := "https://raw.githubusercontent.com/rladies/directory/master/directory/rladies_directory.json?token=" }}
+              {{ $pat := getenv "DIRECTORY_PAT" }}
+              {{ $directory := getJSON $url $pat | shuffle }}
+              {{ range $directory }}
+                {{ partial "directory/li.html" . }}
+              {{ end }}
+              
+            {{ else }}
+              {{ $directory := $.Site.Data.directory | shuffle }}
+              {{ range $directory }}
+                {{ partial "directory/li.html" . }}
+              {{ end }}
             {{ end }}
+
           </ul>
         </div>
 		</div> <!-- /row post  -->
