@@ -15,8 +15,11 @@
 					{{ .Content }}
 				</div>
 				
+					<input id="searchbar" onkeyup="search_directory()" type="text"
+		name="search" placeholder="Search directory..."> 
+		
         <div class="flex-container">
-          <ul class="directory-grid">
+          <ul class="directory-grid" id="directory">
             {{ if eq .Hugo.Environment "production" }}
               {{ $url := "https://raw.githubusercontent.com/rladies/directory/master/directory/rladies_directory.json?token=" }}
               {{ $pat := getenv "DIRECTORY_PAT" }}
@@ -37,4 +40,7 @@
 		</div> <!-- /row post  -->
 	</div>	<!-- /container -->
 </main>
+
+	<!-- linking javscript -->
+	<script src="/js/search.js"></script> 
 {{ end }}
