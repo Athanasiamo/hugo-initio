@@ -200,7 +200,7 @@ buttonr:hover {
 /* directory grid */
 /******************/
 
-.directory-grid {
+#directory-grid {
   display: flex;
   flex-wrap: wrap; 
   flex-direction: row;
@@ -496,4 +496,9 @@ buttonr:hover {
 
 .tui-full-calendar-month-week-item .tui-full-calendar-today .tui-full-calendar-weekday-grid-date-decorator {
   background: #88398a
+}
+
+.pagination li {
+  display: inline-block;
+  padding:5px;
 }

@@ -1,8 +1,8 @@
 <li class="directory-grid-item">
   <div class="directory-grid-main">
     <div class="imgdiv" style='background-image: url({{ .photo_url | default "/images/placeholder_user.png"}});' ></div>
-      <h1><b>{{ .name }}</b></h1> 
-      {{with .honorific }}<h2>{{ . }}{{ end }}&emsp;{{with .pronouns }}{{ . }}</h2>{{ end }}
+      <h1><b class="name">{{ .name }}</b></h1> 
+      {{with .honorific }}<h2 class="honorific">{{ . }}{{ end }}&emsp;{{with .pronouns }}{{ . }}</h2>{{ end }}
       <h3>
         {{ range .social_media }}
           {{ partial "some.html" . }}
@@ -10,13 +10,13 @@
       </h3>
       </div>
       <div class="directory-grid-desc">
-      <p>
+      <p class="affiliation">
         <i>{{ .title }}</i>{{ with .organization }}&nbsp; - &nbsp;{{ . }}{{ end }}
     <br><br>
     <p>
       <b>Contact through:</b> {{ delimit .contact_method ", " | default "Not disclosed" }}<br>
     </p>
-    <p>
+    <p class="interests">
       {{ with .interests }}
         <b><i class="fas fa-tag" style = "font-size: 15px;"></i>&nbsp;</b>
         {{ delimit . ", " }}
